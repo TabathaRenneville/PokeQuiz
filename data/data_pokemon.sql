@@ -104,14 +104,13 @@ INSERT INTO "question" ("id", "quiz_id", "question", "answer_id") VALUES
 
 INSERT INTO "tag" ("id", "name") VALUES
 (1, 'Pikachu'),
-(2, 'blabla'),
+(2, 'blabla');
 
-- Déchargement des données de la table "quiz_has_tag"
---
+-- Déchargement des données de la table "quiz_has_tag"
 
 INSERT INTO "quiz_has_tag" ("quiz_id", "tag_id") VALUES
 (1, 1),
-(2, 2),
+(2, 2);
 
 
 -- On rajoute la clé étrangère
