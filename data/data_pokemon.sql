@@ -100,6 +100,19 @@ INSERT INTO "question" ("id", "quiz_id", "question", "answer_id") VALUES
 (15, 2, '5.png', 15),
 (16, 2, '100.png', 16);
 
+-- données de la table "tag"
+
+INSERT INTO "tag" ("id", "name") VALUES
+(1, 'Pikachu'),
+(2, 'blabla'),
+
+- Déchargement des données de la table "quiz_has_tag"
+--
+
+INSERT INTO "quiz_has_tag" ("quiz_id", "tag_id") VALUES
+(1, 1),
+(2, 2),
+
 
 -- On rajoute la clé étrangère
 ALTER TABLE "answer"
@@ -112,6 +125,6 @@ BEGIN;
 SELECT setval('answer_id_seq', (SELECT MAX(id) from "answer"));
 SELECT setval('question_id_seq', (SELECT MAX(id) from "question"));
 SELECT setval('quiz_id_seq', (SELECT MAX(id) from "quiz"));
-
+SELECT setval('tag_id_seq', (SELECT MAX(id) from "tag"));
 
 COMMIT;

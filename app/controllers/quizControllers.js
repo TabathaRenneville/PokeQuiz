@@ -20,7 +20,12 @@ const quizController = {
         try {
             const quizId = req.params.id;
 
-            const quiz = await Quiz.findByPk(quizId);
+            const quiz = await Quiz.findByPk(quizId, {
+                include: [{
+                    association: "questions",
+                    include: "answers"
+                }]
+            });
 
             if(!quiz) {
                 next();
